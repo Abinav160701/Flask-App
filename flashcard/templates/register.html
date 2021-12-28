@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <title>FLASH CARD</title>
+        
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+        
+
+
+    </head>
+    <body>  
+     <header class="p-3">
+      <a class="navbar-brand nav-item text-light" href="{{url_for('views.landing')}}">FLASH CARD</a>
+     </header>
+    
+      
+      <br><br><br><br><br><br><br><br>
+      <div class = "container">
+      <div class="main">
+         <div class="col-md-6 col-sm-12">
+         <div class="container">
+            {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+            {% for category, message in messages %}
+               <div class = "alert alert-warning alert-dismissable fade show" role = "alert">
+               {{ message }} 
+               <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+               </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+         </div>
+            <div class="login-form">
+               <form action ="/user/create" method = "POST">
+                  <div class="form-group">
+                     
+                     <input type="text" class="form-control" placeholder="User Name" name="username">
+                  </div>
+                  <div class="form-group">
+                     <br>
+                     <input type="password" class="form-control" placeholder="Password" name="password">
+                  </div>
+                  <br>
+                  <large style="color: azure;"><i>Have an account already?<a href="{{ url_for('views.login') }}"></i> Login</a></large>
+                  
+                  <button style="width:100px;margin: 15px;" type="submit" class="btn btn-dark">Register</button>
+               </form>
+            </div>
+         </div>
+      </div>
+      </div>
+      
+    
+        
+        
+    </body>
+</html>

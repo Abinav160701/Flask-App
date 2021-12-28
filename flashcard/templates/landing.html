@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>FLASH CARD </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+        <a class="navbar-brand"><h1>WELCOME TO ABINAV's APP</h1></a>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="nav-item" ><a href="{{ url_for('views.login') }}"><span>Login</span></a></div>
+            <div class="nav-item"><a href="{{ url_for('views.register') }}"><span>Signup</span></a></div>
+        </div>
+    </body>
+</html>
