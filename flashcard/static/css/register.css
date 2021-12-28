@@ -1,0 +1,16 @@
+
+html,body{
+  
+    background-image: URL(IMG_1778.jpg);
+    background-position: center;
+    background-size:150%;
+    background-repeat:repeat-y;
+}
+.p-3{
+  background: darkred;
+  background-color: darkred;
+}
+.nav-item{
+  text-align: right;
+  text-justify: auto;
+}
